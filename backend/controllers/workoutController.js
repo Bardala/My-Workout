@@ -1,3 +1,11 @@
+// import {
+//   find,
+//   findById,
+//   create,
+//   findOneAndDelete,
+//   findOneAndUpdate,
+// } from "../models/workoutModel";
+// import mongoose, { Types } from "mongoose";
 const Workout = require("../models/workoutModel");
 const mongoose = require("mongoose");
 
@@ -39,12 +47,57 @@ const createWorkout = async (req, res) => {
 };
 
 // delete a workout
+const deleteWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "No such workout" });
+  }
+
+  const workout = await Workout.findOneAndDelete({ _id: id });
+
+  if (!workout) {
+    return res.status(400).json({ error: "No such workout" });
+  }
+
+  res.status(200).json(workout);
+};
 
 // update a workout
+const updateWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "No such workout" });
+  }
+
+  const workout = await Workout.findOneAndUpdate(
+    { _id: id },
+    {
+      ...req.body,
+    }
+  );
+
+  if (!workout) {
+    return res.status(400).json({ error: "No such workout" });
+  }
+
+  res.status(200).json(workout);
+};
 
 // export the router
 module.exports = {
-  createWorkout,
   getAllWorkouts,
   getWorkout,
+  createWorkout,
+  deleteWorkout,
+  updateWorkout,
 };
+
+// export default {
+//   createWorkout,
+//   getAllWorkouts,
+//   getWorkout,
+//   updateWorkout,
+//   deleteWorkout,
+// };
