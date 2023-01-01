@@ -1,14 +1,14 @@
 # My-Workout-app
 
-- This is a simple workout app that allows you to create a workout routine and track your progress.
+This is a simple workout app that allows you to create a workout routine and track your progress.
 
 ## About the app
 
-    - The app is built by MERN stack.
-    - The app consists of One page.
-    - You can create a workout routine and track your progress.
-    - You can delete a specific workout routine.
-    - All workout routines are stored in the database.
+- The app is built by MERN stack.
+- The app consists of One page.
+- You can create a workout routine and track your progress.
+- You can delete a specific workout routine.
+- All workout routines are stored in the database.
 
 ## Frontend
 
