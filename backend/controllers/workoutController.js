@@ -1,11 +1,3 @@
-// import {
-//   find,
-//   findById,
-//   create,
-//   findOneAndDelete,
-//   findOneAndUpdate,
-// } from "../models/workoutModel";
-// import mongoose, { Types } from "mongoose";
 const Workout = require("../models/workoutModel");
 const mongoose = require("mongoose");
 
@@ -38,7 +30,6 @@ const createWorkout = async (req, res) => {
   const { title, reps, load } = req.body;
 
   let emptyFields = [];
-
   if (!title) {
     emptyFields.push("title");
   }
@@ -110,11 +101,3 @@ module.exports = {
   deleteWorkout,
   updateWorkout,
 };
-
-// export default {
-//   createWorkout,
-//   getAllWorkouts,
-//   getWorkout,
-//   updateWorkout,
-//   deleteWorkout,
-// };
