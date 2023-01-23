@@ -1,4 +1,4 @@
-# My-Workout-app
+# My Workout App
   This is a simple workout app that allows you to create your 
   special workout routine and track your progress
 
