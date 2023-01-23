@@ -12,7 +12,7 @@ const WorkoutsDetails = ({ workout }) => {
 
     const response = await fetch("/api/workouts/" + workout._id, {
       method: "DELETE",
-      headers: { 'Authorization': `Bearer ${user.Authorization}` },
+      headers: { 'Authorization': `Bearer ${user.token}` },
     });
     const data = await response.json();
 
