@@ -9,9 +9,12 @@ const WorkoutForm = () => {
   const [reps, setReps] = useState("");
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
+  const [isLoading, setIsLoading] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     const workout = { title, load, reps };
 
@@ -27,9 +30,11 @@ const WorkoutForm = () => {
     if (!response.ok) {
       setError(data.error);
       setEmptyFields(data.emptyFields);
+      setIsLoading(false);
     }
 
     if (response.ok) {
+      setIsLoading(false);
       setEmptyFields([]);
       setError(null);
       setTitle("");
@@ -67,7 +72,7 @@ const WorkoutForm = () => {
         className={emptyFields.includes("reps") ? "error" : ""}
       />
 
-      <button>Add Workout</button>
+      <button disabled={isLoading}>Add Workout</button>
       {error && <div className="error">{error}</div>}
     </form>
   );
