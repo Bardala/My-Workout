@@ -34,13 +34,13 @@ const WorkoutForm = () => {
     }
 
     if (response.ok) {
-      setIsLoading(false);
       setEmptyFields([]);
       setError(null);
       setTitle("");
       setLoad("");
       setReps("");
       dispatch({ type: "CREATE_WORKOUT", payload: data });
+      setIsLoading(false);
     }
   };
 
