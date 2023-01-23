@@ -121,10 +121,7 @@ nav {
   align-items: center;
 }
 
-nav a {
-  margin-left: 10px;
-}
-
+nav a,
 nav button {
   background: #fff;
   color: var(--primary);

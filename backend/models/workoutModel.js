@@ -18,6 +18,10 @@ const workoutSchema = new Schema(
       type: Number,
       required: true,
     },
+    user_id: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 ); // this is a mongoose option that will automatically add a createdAt and updatedAt field to the schema
