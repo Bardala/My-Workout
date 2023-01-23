@@ -125,6 +125,17 @@ nav a {
   margin-left: 10px;
 }
 
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+}
+
 /* auth forms */
 form.signup,
 form.login {
@@ -133,5 +144,4 @@ form.login {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
